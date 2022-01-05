@@ -16,6 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := dipper
+DEVICE_PATH := device/xiaomi/dipper
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -25,9 +26,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := twrp_dipper
@@ -38,6 +38,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := dipper
 TARGET_VENDOR_DEVICE_NAME := dipper
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=dipper \
     BUILD_PRODUCT=dipper \

@@ -17,3 +17,13 @@
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
+# A/B
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor \
+    modem \
+    dsp \
+    bluetooth
+
+

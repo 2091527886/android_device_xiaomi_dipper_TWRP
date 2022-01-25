@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_dipper.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_dipper_old.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_dipper-userdebug \
-    twrp_dipper-eng
+    twrp_dipper_old-userdebug \
+    twrp_dipper_old-eng
